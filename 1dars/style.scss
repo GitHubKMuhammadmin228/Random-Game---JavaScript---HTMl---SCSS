@@ -1,0 +1,17 @@
+*{
+    user-select: none;
+}
+
+.w-400{
+    min-width: 320px !important;
+    max-width: 500px !important;
+}
+
+.modal.show{
+    z-index: 1000;
+    display: block;
+}
+
+.blur {
+    filter: blur(20px);
+}
