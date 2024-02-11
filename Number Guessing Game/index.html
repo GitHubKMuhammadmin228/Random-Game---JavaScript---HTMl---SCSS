@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="modal">
+        <div class="modal_header">
+            <h2>Siz o'ylagan son</h2>
+            <h3 class="put_found"></h3>
+        </div>
+
+        <div class="modal_button">
+            <button>Replay</button>
+            <button class="" onclick="replay()"></button>
+        </div>
+    </div>
+
+    <div class="container">
+        <select class="game_choose_number">
+            <option value="15">15 Number</option>
+            <option value="21">21 Number</option>
+            <option value="27">27 Number</option>
+        </select>
+
+        <div class="game_information">
+            <p>Siz shu yerdagi sonlardan birini tanlang va <br> Qaysi Section ekanligini tugmalar orqali ko'rsating</p>
+
+            <div class="container_header">
+                <div class="header_section">
+                    <div>1 Section</div>
+                    <div>2 Section</div>
+                    <div>3 Section</div>
+                </div>
+            </div>
+
+            <div class="container_body"></div>
+            <div class="btn_click">
+                <button onclick="btn1()">1 Section</button>
+                <button onclick="btn2()">2 Section</button>
+                <button onclick="btn3()">3 Section</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html> 
