@@ -1,134 +1,59 @@
-let big_list = []
-let small_List = [...big_list]
 let count = 1
+let big_List = []
 
+const body = document.querySelector("body")
 const modal = document.querySelector(".modal")
+const select = document.querySelector("#select")
 const found = document.querySelector(".put_found")
-const container = document.querySelector(".container")
-const select = document.querySelector(".game_choose_number")
+const get_blur = document.querySelector(".get_blur")
+const addNumber = document.querySelector(".add_number")
 
-choose_number()
+choose__number()
 
-function btn1 () {
-    if(count < 3){
-        let array = []
-        sort_list(1, array)
-        sort_list(0, array)
-        sort_list(2, array)
-
-        big_list = array
-
-        list_append(array)
-
-        count += 1
-    } else add_modal(0)
+function choose__number() {
+    select.addEventListener("change", ({ target }) => push__number__list(Number(target.value)))
+    push__number__list(15)
 }
 
-
-function btn2 () {
-    if(count < 3){
-        let array = []
-        sort_list(2, array)
-        sort_list(1, array)
-        sort_list(0, array)
-
-        big_list = array
-
-        list_append(array)
-
-        count += 1
-    } else add_modal(1)
+function push__number__list(num) {
+    big_List = []
+    while (num > 0) {
+        let random = Math.floor(Math.random() * 99);
+        if (!big_List.includes(random)) {
+            big_List.push(random); num -= 1
+        }
+    }
+    list__append()
 }
 
-function btn3 () {
-    if(count < 3){
-        let array = []
-        sort_list(1, array)
-        sort_list(2, array)
-        sort_list(0, array)
-
-        big_list = array
-
-        list_append(array)
-
-        count += 1
-    } else add_modal(2)
+function list__append() {
+    addNumber.innerHTML = ""
+    for (let i of big_List) addNumber.innerHTML += `<div class="number">${i}</div>`
 }
 
-function replay () {
-    count = 1
-    select.value = "Choose"
-    list_append(small_List)
-    modal.classList.remove("active")
-    container.classList.remove("active")
+function sort__list(num, gap__list) {
+    for (let i = num; i < big_List.length; i += 3) gap__list.push(big_List[i])
 }
 
-function add_modal (num) {
+function add__modal(num) {
     let array = []
-    switch (num) {
-        case 0:
-            sort_list(0, array)
-            break
-        case 1:
-            sort_list(1, array)
-            break
-        case 2:
-            sort_list(2, array)
-            break
-                        
-    }
-
+    sort__list(num, array)
+    body.classList.add("hidden")
     modal.classList.add("active")
-    container.classList.add("active")
-    found.innerHTML = array(parseInt(array.length / 2))
+    get_blur.classList.add("blur")
+    found.innerHTML = array[parseInt(array.length / 2)]
 }
 
-function choose_number() {
-    select.addEventListener("change", ({target}) =>{
-        switch(target.value){
-            case "15":
-                push_number_list(15)
-                break
-            case "21":
-                push_number_list(21)
-                break
-            case "27":
-                alert("Selectdan birini tanlang")
-                break
-            default:
-                alert("Selectdan birini tanlang")
-                break
-        }
-    })
+function btn_click(num1, num2, num3, addNumber) {
+    if (count < 3) {
+        let array = []
+        sort__list(num1, array)
+        sort__list(num2, array)
+        sort__list(num3, array)
+        big_List = array
+        list__append()
+        count += 1
+    } else add__modal(addNumber)
 }
 
-function list_append(list) {
-    const body = document.querySelector(".container_body")
-    body.innerHTML = ""
-    for(let i = 0; i < list.length; i++){
-        let div = document.createElement("div")
-        div.innerHTML = list[i]
-        body.appendChild(child)
-    }
-}
-
-function push_number_list(num) {
-    big_list = []
-    let defined = num 
-
-    while (defined > 0){
-        let random = Math.floor(Math.random() * 99)
-        if (big_list.includes(random) == false){
-            big_list.push(random)
-            defined -= 1
-        }
-    }
-
-    list_append(big_list)
-}
-
-function sort_list(num, gap_list){
-    for (let i = num; i < big_list.length; i+= 3){
-        gap_list.push(big_list[1])
-    }
-}
+const replay = () => location.reload()

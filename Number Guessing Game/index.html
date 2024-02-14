@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number Guessing Game</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Find My Number </title>
+    <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 <body>
-
     <div class="modal">
         <div class="modal_header">
-            <h2>Siz o'ylagan son</h2>
-            <h3 class="put_found"></h3>
+            <h2>Siz O'ylagan Son</h2>
+            <h3 class="put_found">07</h3>
         </div>
-
-        <div class="modal_button">
-            <button>Replay</button>
-            <button class="" onclick="replay()"></button>
+        <div class="modal_body">
+            <button onclick="replay()">Replay</button>
         </div>
     </div>
 
-    <div class="container">
-        <select class="game_choose_number">
-            <option value="15">15 Number</option>
-            <option value="21">21 Number</option>
-            <option value="27">27 Number</option>
-        </select>
-
-        <div class="game_information">
-            <p>Siz shu yerdagi sonlardan birini tanlang va <br> Qaysi Section ekanligini tugmalar orqali ko'rsating</p>
-
-            <div class="container_header">
-                <div class="header_section">
-                    <div>1 Section</div>
-                    <div>2 Section</div>
-                    <div>3 Section</div>
+    <div class="get_blur">
+        <div class="choose_number">
+            <select name="" id="select">
+                <option value="15" selected>15 Number</option>
+                <option value="21">21 Number</option>
+                <option value="27">27 Number</option>
+            </select>
+        </div>
+    
+        <center>
+            <div class="container">
+                <div class="section_table">
+                    <h3>Qaysi Sectionda Ekanligini bosing</h3>
+                    <div class="section_body">
+                        <div>1 Sec</div>
+                        <div>2 Sec</div>
+                        <div>3 Sec</div>
+                    </div>
+                </div>
+                <div class="add_number">
+                    
+                </div>
+                <div class="btn_group">
+                    <button role="button" onclick="btn_click(1, 0, 2, 0)"><span class="text">1</span></button>
+                    <button role="button" onclick="btn_click(2, 1, 0, 1)"><span class="text">2</span></button>
+                    <button role="button" onclick="btn_click(1, 2, 0, 2)"><span class="text">3</span></button>
                 </div>
             </div>
-
-            <div class="container_body"></div>
-            <div class="btn_click">
-                <button onclick="btn1()">1 Section</button>
-                <button onclick="btn2()">2 Section</button>
-                <button onclick="btn3()">3 Section</button>
-            </div>
-        </div>
+        </center>
     </div>
-
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
 </body>
-</html> 
+</html>
