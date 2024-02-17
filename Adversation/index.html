@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"crossorigin="anonymous">
+        <style>
+            .modals{
+                width: 1000px;
+                padding: 32px;
+                top: 50% !important;
+                left: 50% !important;
+                background: #f8f8f8f8;
+                transition: 2s ease-in-out;
+                transform: translate(-1000%, -50%) !important;
+            }
+
+            @media (max-width: 1020px) {
+                .modals{
+                    width: 100%;
+                    padding: 17px;
+                }
+            }
+
+            .modals.show{
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="modals position-absolute shadow">
+                <div class="modals-content">
+                    <video controls autoplay muted class="w-100">
+                        <source src="./ads.mp4" />
+                    </video>
+                </div>
+                <div class="modals-btn">
+                    <button class="btn d-none position-absolute translate-middle border-0 py-1 px-4 bg-dark text-light fw-normal fs-5" style="bottom: 100px; right: 20px; opacity: 0.7;">
+                        Skip
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script>
+            const modals = document.querySelector('.modals')
+            const btn = document.querySelector('.btn')
+            const video = document.querySelector('video')
+            let count = 5
+            window.onload = () => {
+                modals.classList.add('show')
+                setTimeout(() =>{
+                    btn.classList.remove('d-none')
+                    btn.classList.add('d-block')
+                    setInterval(() =>{
+                        if (count > 0) {
+                            btn.innerText = `Skip ${count}`
+                            count -= 1
+                        } else {
+                            btn.innerText = 'Skip'
+                            btn.addEventListener('click', () => {
+                                modals.classList.remove('show')
+                            })
+                        }
+                    }, 1000)
+                }, 5000)
+            }
+        </script>
+    </body>
+</html>

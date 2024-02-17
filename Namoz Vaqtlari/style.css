@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body.hidden{
+    overflow: hidden;
+}
+
+.main-container.blur{
+    filter: blur(200px);
+}
+
+.prayer{
+    padding: 30px 100px;
+}
+
+.section-content .section-content-title{
+    font-size: 36px;
+    color: #323232;
+    line-height: 26px;
+    text-align: center;
+    margin-bottom: 18px;
+    text-transform: capitalize;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.prayer-day-choose{
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prayer-day-choose button, .prayer-day-choose select{
+    border: none;
+    outline: none;
+    color: #fff;
+    margin: 20px 0;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-transform: capitalize;
+    background-color: #89c74a;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.prayer-day-choose select option{
+    background-color: #323232;
+}
+
+.prayer-day-choose select::-webkit-scrollbar{
+    display: none;
+}
+
+.prayer-default-slider{
+    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.prayer-default-single{
+    width: 100%;
+    transition: 0.5s;
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 7px 10px;
+    min-height: 120px;
+    background: #fff;
+    border: 1px solid #ebebeb;
+}
+
+.prayer-date{
+    margin: 10px 0;
+    text-align: center;
+}
+
+.prayer-date p{
+    font-size: 14px;
+    color: #323232;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.prayer-date span{
+    font-size: 16px;
+    font-weight: 800;
+    color: #89c74a;
+}
+
+.prayer-times{
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.prayer-times:hover{
+    color: #89c74a;
+}
+
+@media (max-width: 768px) {
+    .prayer{
+        padding: 30px 15px;
+    }
+
+    .section-content .section-content-title{
+        font-size: 24px;
+    }
+
+    .prayer-day-choose{
+        gap: 10px;
+    }
+
+    .prayer-day-choose button, .prayer-day-choose select{
+        padding: 8px 12px;
+    }
+}
+
+.loader{
+    display: none;
+}
+
+.loader.active{
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    display: block;
+    position: fixed;
+    overflow: hidden;
+    z-index: 1000000000;
+    transform: rotate(45deg);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.loader.active::after{
+    inset: 8px;
+    content: '';
+    margin: auto;
+    position: absolute;
+    background: #de3500;
+    animation: diamondLoader 2s linear infinite;
+}
+
+.loader.active::before {
+    content: '';
+    inset: -15px;
+    margin: auto;
+    position: absolute;
+    background: #de3500;
+    animation: diamondLoader 2s linear infinite;
+}
+
+@keyframes diamondLoader {
+    0%, 10% {
+        transform: translate(-64px, -64px) rotate(-45deg);
+    }
+
+    90%, 100%{
+        transform: translate(0px, 0px) rotate(-45deg);
+    }
+}
