@@ -38,13 +38,18 @@ function add_prayer_time(data) {
         </div>
 
         <div class="prayer-times">
+            <p class="prayer-link">Fajr:</p>
+            <p class="prayer-link">${i?.timings.Fajr}</p>
+        </div>
+
+        <div class="prayer-times">
             <p class="prayer-link">Sunrise:</p>
             <p class="prayer-link">${i?.timings.Sunrise}</p>
         </div>
 
         <div class="prayer-times">
             <p class="prayer-link">Dhur:</p>
-            <p class="prayer-link">${i?.timings.Dhuhr}</p>
+            <p class="prayer-link">${i?.timings.Dhur}</p>
         </div>
 
         <div class="prayer-times">
@@ -58,18 +63,13 @@ function add_prayer_time(data) {
         </div>
 
         <div class="prayer-times">
-            <p class="prayer-link">Sunset:</p>
-            <p class="prayer-link">${i?.timings.Sunset}</p>
-        </div>
-
-        <div class="prayer-times">
             <p class="prayer-link">Isha:</p>
             <p class="prayer-link">${i?.timings.Isha}</p>
         </div>
 
-            <div class="prayer-times">
-            <p class="prayer-link">Fajr:</p>
-            <p class="prayer-link">${i?.timings.Fajr}</p>
+        <div class="prayer-times">
+            <p class="prayer-link">Sunset:</p>
+            <p class="prayer-link">${i?.timings.Sunset}</p>
         </div>
             </div>
         `;
