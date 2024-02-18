@@ -49,7 +49,7 @@ function add_prayer_time(data) {
 
         <div class="prayer-times">
             <p class="prayer-link">Dhur:</p>
-            <p class="prayer-link">${i?.timings.Dhur}</p>
+            <p class="prayer-link">${i?.timings.Dhuhr}</p>
         </div>
 
         <div class="prayer-times">
