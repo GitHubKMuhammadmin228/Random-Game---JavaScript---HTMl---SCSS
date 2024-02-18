@@ -36,7 +36,7 @@ function add_prayer_time(data) {
             <p class="prayer-link">${i?.date.hijri.date}</p>
             <span class="prayer-price">${i?.date.readable}</span>
         </div>
-
+        
         <div class="prayer-times">
             <p class="prayer-link">Fajr:</p>
             <p class="prayer-link">${i?.timings.Fajr}</p>
